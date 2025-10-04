@@ -1,4 +1,6 @@
+
 import pyfiglet
+from pathlib import Path
 from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
@@ -6,77 +8,68 @@ from rich.align import Align
 from rich.table import Table
 from rich.panel import Panel
 from rich.markdown import Markdown
-from utils.common import create_slide_panel
+from utils.common import create_slide_panel, resize
 from slides._deck import deck
 from spiel import Triggers
+from spiel.renderables.image import Image
 from textual.scroll_view import ScrollView
 from textual.widgets import Static
-
-# This will be imported by the main deck file
-
 @deck.slide(title="Agentic Runtime")
 def agentic_runtime_slide(triggers: Triggers) -> RenderableType:
     # Create ASCII art for "RUNTIME"
-    runtime_art = pyfiglet.figlet_format("RUNTIME", font="pagga").strip()
+    runtime_art = pyfiglet.figlet_format("Pydantic AI", font="pagga").strip()
     
     # Create the main runtime content
     main_content = Text.from_markup(
         f"[bold green]{runtime_art}[/bold green]\n"
         "[dim]The orchestration layer that manages reasoning, tool calls, "
-        "and task execution. The 'brain' behind intelligent behavior.[/dim]",
+        "and task execution. The 'brain' behind intelligent behavior.[/dim]\n",
         justify="center"
     )
     
-    # The complete code broken into lines for progressive reveal
-    full_code_lines = [
-        '# Pydantic AI: Moo Cow Agent Example',
-        'from pydantic_ai import Agent',
-        'from typing import Literal',
-        'from pydantic import BaseModel'
-        '',
-        '# Create our Moo Cow agent',
-        'moo_cow_agent = Agent(',
-        '    \'openai:gpt-4o-mini\',',
-        '    system_prompt="You are a friendly cow. Your main purpose is to moo!"',
-        ')',
-        '',
-        '@moo_cow_agent.tool_plain',
-        'def moo_tool(num_moos: int, moo_intensity: Literal["soft", "loud"]) -> Dict[str, bool | str]:',
-        '    """A tool that makes the cow moo!"""',
-        '    if num_moos < 1:',
-        '        return {"success": False, "msg": "You have to moo at least once"}',
-        '    moo = "MOOOO!!!!!"',
-        '    if moo_intensity == "soft":',
-        '        moo = "moo..."',
-        '    for _ in range(num_moos):',
-        '        print(moo)',
-        '    return {"success": True, "msg": "great job mooing!"}',
-        '',
-        '# Run the agent',
-        'result = moo_cow_agent.run_sync(',
-        '    "Please introduce yourself and use your special ability!"',
-        ')',
-        'print(result.output)',
-        '# Expected output: "Hello! I\'m a friendly cow. Moo! 🐄"'
-    ]
+    # The complete code as a single multiline string
+    full_code = '''# Pydantic AI: Moo Cow Agent Example
+from pydantic_ai import Agent
+from pydantic import BaseModel, Field
+from typing import Literal
+from pydantic.types import conint
+
+# Create our Moo Cow agent
+moo_cow_agent = Agent(
+    'openai:gpt-4o-mini',
+    system_prompt="You are a friendly cow. Your main purpose is to moo!"
+)
+
+class Moo(BaseModel):
+    num_moos: conint(gt=0) = Field(..., description="Number of times to moo")
+    moo_intensity: Literal["soft", "loud"] = Field(default="loud", description="How loud to moo")
+
+class MooResult(BaseModel):
+    success: bool = Field(..., description="Whether the moo operation was successful")
+    msg: str = Field(..., description="Message about the moo operation")
+    total_moos: int = Field(..., description="Total number of moos performed")
+
+@moo_cow_agent.tool_plain
+def moo_tool(moo: Moo) -> MooResult:
+    """A tool that makes the cow moo!"""
+    for _ in range(moo.num_moos):
+        moo_sound = "MOOOO!!!!!" if moo.moo_intensity == "loud" else "moo..."
+        print(moo_sound)
     
-    # Update moo tool to use Pydantic class
-    full_code_lines[15] = 'class Moo(BaseModel):'
-    full_code_lines[16] = '    num_moos: conint(gt=0)'
-    full_code_lines[17] = '    moo_intensity: Literal["soft", "loud"]'
-    full_code_lines[18] = ''
-    full_code_lines[20] = '@moo_cow_agent.tool_plain'
-    full_code_lines[21] = 'def moo_tool(moo: Moo) -> Dict[str, bool | str]:'
-    full_code_lines[22] = '    """A tool that makes the cow moo!"""'
-    full_code_lines[23] = '    for _ in range(moo.num_moos):'
-    full_code_lines[24] = '        moo_sound = "MOOOO!!!!!" if moo.moo_intensity == "loud" else "moo..."'
-    full_code_lines[25] = '        print(moo_sound)'
-    full_code_lines[26] = '    return {"success": True, "msg": "great job mooing!"}'
+    return MooResult(
+        success=True,
+        msg=f"Great job mooing {moo.num_moos} times with {moo.moo_intensity} intensity!",
+        total_moos=moo.num_moos
+    )
+
+# Run the agent
+result = moo_cow_agent.run_sync(
+    "Please introduce yourself and use your special ability!"
+)
+print(result.output)
+# Expected output: "Hello! I'm a friendly cow. Moo! 🐄"'''
     
-    # Remove the Dict import since we're using Pydantic
-    full_code_lines[1] = 'from pydantic_ai import Agent'
-    full_code_lines[2] = 'from pydantic import BaseModel'
-    full_code_lines[3] = 'from typing import Literal'
+    full_code_lines = full_code.split('\n')
     
     # Calculate how many lines to show based on trigger count
     # Start with 21 lines, each 't' press adds 1 more line
@@ -99,39 +92,11 @@ def agentic_runtime_slide(triggers: Triggers) -> RenderableType:
     
     moo_cow_code = visible_code
     
-    # Create explanation sections
-    explanation_table = Table(title="", show_header=True, header_style="bold cyan", border_style="white")
-    explanation_table.add_column("Component", style="bold yellow", width=25)
-    explanation_table.add_column("Purpose", style="", width=80)
+    # Process moo cow image on the fly
+    moo_cow_path = resize(Path("images/moo-cow.png"), (64, 64))
     
-    explanation_table.add_row(
-        "Agent Definition",
-        Text.from_markup("[dim]Creates the AI agent with a model and personality. The system prompt defines the agent's character and behavior.[/dim]\n")
-    )
-    explanation_table.add_row(
-        "Tool Registration",
-        Text.from_markup("[dim]Registers functions the agent can call. @agent.tool_plain for context-independent tools.[/dim]\n")
-    )
-    explanation_table.add_row(
-        "Execution Flow",
-        Text.from_markup("[dim]run_sync() triggers the agent's reasoning loop. Agent decides when and how to use its tools.[/dim]\n")
-    )
-    explanation_table.add_row(
-        "Runtime Management",
-        Text.from_markup("[dim]Handles prompt processing, tool selection, response generation, and error handling.[/dim]\n")
-    )
-    
-    # Add simple trigger instructions to the explanation
-    if total_lines_to_show < len(full_code_lines):
-        explanation_table.add_row(
-            "💡 Interactive Feature",
-            Text.from_markup("[bold cyan]Press \'t\' to reveal the next line of code![/bold cyan] [dim]Starts with 21 lines, each press shows 1 more line.[/dim]")
-        )
-    else:
-        explanation_table.add_row(
-            "🎉 Complete!",
-            Text.from_markup("[bold green]All code revealed![/bold green] [dim]Press \'t\' again to restart from the beginning.[/dim]")
-        )
+    # Load processed image using Spiel's native Image widget
+    pixelated_moo_cow = Image.from_file(str(moo_cow_path))
 
     code_panel = Panel.fit(
         Markdown(moo_cow_code),
@@ -143,15 +108,15 @@ def agentic_runtime_slide(triggers: Triggers) -> RenderableType:
     # Create side-by-side layout for code and explanation
     side_by_side_layout = Layout()
     side_by_side_layout.split_row(
-        Layout(code_panel, size=140),
-        #Layout(explanation_table, size=70)
+        Layout(code_panel, size=100),
+        Align.center(Layout(pixelated_moo_cow, size=25))
     )
     
     # Combine everything in a layout
     layout = Layout()
     layout.split_column(
-        Layout(Align.center(main_content), size=4),
-        Layout(side_by_side_layout, size=25)  # Increased size to accommodate trigger hints
+        Layout(Align.center(main_content), size=5),
+        Layout(side_by_side_layout, size=24)  # Increased size to accommodate trigger hints
     )
     
     # Wrap in a panel for consistency
