@@ -20,26 +20,26 @@ from PIL import Image as Img
 from PIL.Image import Resampling
 from pathlib import Path
 
-def resize(image_path: Path, size: tuple[int, int], transparency_threshold: int = 200) -> Path:
-    """Resize image and make white pixels transparent, return path to processed image."""
+def resize(image_path: Path, size: tuple[int, int]) -> Path:
+    """Resize image and replace transparent pixels with terminal background, return path to processed image."""
     # Load and process image
     img = Img.open(image_path)
-    img_rgba = img.convert('RGBA')
+    img_rgba = img.convert('RGB')
     resized = img_rgba.resize(size, Resampling.LANCZOS)
     
-    # Make white/light pixels transparent
+    # Replace transparent pixels with terminal background (RGB 30,30,30)
     datas = resized.getdata()
     new_data = []
     for item in datas:
-        if item[0] > transparency_threshold and item[1] > transparency_threshold and item[2] > transparency_threshold:
-            new_data.append((255, 255, 255, 0))  # Transparent
+        if item[0] < 30 and item[1] < 30 and item[2] < 30:
+            new_data.append((30, 30, 30))
         else:
             new_data.append(item)
-
+    
     resized.putdata(new_data)
     
     # Save processed image
-    output_path = image_path.parent / f"{image_path.stem}_{size[0]}x{size[1]}_transparent.png"
+    output_path = image_path.parent / f"{image_path.stem}_{size[0]}x{size[1]}_matched.png"
     resized.save(output_path)
     return output_path
 
@@ -48,19 +48,19 @@ deck = Deck(name="Vibe Coding: Is It Right For Data Science?")
 @deck.slide(title="Vibe Coding: Is It Right For Data Science?")
 def title_slide() -> RenderableType:
     # Create large ASCII art titles using pyfiglet
-    title_art = pyfiglet.figlet_format("VIBE CODING", font="smmono9").strip()
+    title_art = pyfiglet.figlet_format("VIBE CODING", font="pagga").strip()
     
     # Process images on the fly
-    left_pikachu_path = resize(Path("images/img.png"), (48, 48))
-    right_pikachu_path = resize(Path("images/img.png"), (48, 48))
+    left_pikachu_path = resize(Path("images/pika.png"), (24, 24))
+    right_pikachu_path = resize(Path("images/charizard.png"), (24, 24))
     
     # Load processed images using Spiel's native Image widget
     left_pikachu = Image.from_file(str(left_pikachu_path))
     right_pikachu = Image.from_file(str(right_pikachu_path))
     
-    # Create title text
+    # Create title text with teal figlet
     title_text = Text.from_markup(
-        f"[bold cyan]{title_art}[/bold cyan]\n\n"
+        f"[bold green]{title_art}[/bold green]\n\n"
         "[bold yellow]Is It Right For Data Science?[/bold yellow]\n\n"
         "Michael Pfaffenberger\n"
         "[dim white]October 2025[/dim white]",
