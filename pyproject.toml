@@ -7,4 +7,5 @@ requires-python = ">=3.12"
 dependencies = [
     "pyfiglet>=1.0.4",
     "spiel>=0.5.1",
+    "textual>=0.11",
 ]

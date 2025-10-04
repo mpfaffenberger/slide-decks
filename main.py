@@ -1,6 +1,4 @@
-def main():
-    print("Hello from slide-decks!")
-
+import spiel
 
 if __name__ == "__main__":
-    main()
+    spiel.present(__file__)

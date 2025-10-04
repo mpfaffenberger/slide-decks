@@ -6,6 +6,7 @@ from slides import about_me_slide
 from slides import table_of_contents
 from slides import agentic_ai_slide
 from slides import agent_architecture_slide
+from slides import agentic_runtime_slide
 
 
 # Presentation entry point

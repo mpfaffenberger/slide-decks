@@ -67,7 +67,7 @@ def agent_architecture_slide() -> RenderableType:
     # Create a flow indicator
     flow_text = Text.from_markup(
         "[green]⬆️ Bidirectional Data Flow ⬆️\n"
-        "[dim]Each layer communicates bidirectionally for real-time processing[/dim]",
+        "[dim]Each layer communicates bidirectionally[/dim]",
         justify="center"
     )
 
