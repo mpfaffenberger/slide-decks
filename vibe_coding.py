@@ -1,15 +1,12 @@
-from spiel import Deck, present
-from slides.title_slide import create_title_slide
-from slides.about_me_slide import create_about_me_slide
-from slides.agentic_ai_slide import create_agentic_ai_slide
+from spiel import present
+from slides._deck import deck
 
-# Create the deck
-deck = Deck(name="Vibe Coding: Is It Right For Data Science?")
+from slides import title_slide
+from slides import about_me_slide
+from slides import table_of_contents
+from slides import agentic_ai_slide
+from slides import agent_architecture_slide
 
-# Import all slides (order matters!)
-create_title_slide(deck)
-create_about_me_slide(deck)
-create_agentic_ai_slide(deck)
 
 # Presentation entry point
 if __name__ == "__main__":
