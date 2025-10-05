@@ -7,9 +7,11 @@ from slides import table_of_contents
 from slides import agentic_ai_slide
 from slides import agent_architecture_slide
 from slides import agentic_runtime_slide
+from slides import history_of_coding_agents_slide
+from slides import enshittification_slide
+from slides import vc_leverage_slide
 from slides import code_puppy_intro_slide
 from slides import code_puppy_slide
-from slides import vc_leverage_slide
 
 
 # Presentation entry point
