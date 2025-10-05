@@ -1,10 +1,8 @@
 import pyfiglet
-from pathlib import Path
 from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
-from rich.table import Table
 from rich.panel import Panel
 from rich.markdown import Markdown
 from utils.common import create_slide_panel
@@ -93,7 +91,7 @@ def code_puppy_slide(triggers: Triggers) -> RenderableType:
     # Wrap in a panel for consistency
     final_content = create_slide_panel(
         layout,
-        "🐕 Meet Code Puppy: The Ultimate Betrayal of Windsurf 🐕",
+        "🐕 Meet Code Puppy: Open Source Alternative 🐕",
         "white"
     )
     

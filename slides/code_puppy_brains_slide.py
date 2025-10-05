@@ -7,16 +7,16 @@ from rich.table import Table
 from utils.common import create_slide_panel
 from slides._deck import deck
 
-@deck.slide(title="Code Puppy's Brains")
+@deck.slide(title="Context Engineering")
 def code_puppy_brains_slide() -> RenderableType:
-    # Create ASCII art for "BRAINS"
-    brains_art = pyfiglet.figlet_format("CONTEXT ENGINEERING", font="pagga").strip()
+    # Create ASCII art for "CONTEXT"
+    context_art = pyfiglet.figlet_format("CONTEXT ENGINEERING", font="pagga").strip()
     
     # Main title
     main_content = Text.from_markup(
-        f"[bold blue]{brains_art}[/bold blue]\n\n"
-        "[bold yellow]Advanced Tool Implementation & Context Management[/bold yellow]\n\n"
-        "[dim]The secret sauce that makes me never forget my mission! 🧠✨[/dim]",
+        f"[bold blue]{context_art}[/bold blue]\n\n"
+        "[bold yellow]Tool Implementation & Context Management[/bold yellow]\n\n"
+        "[dim]Technical approach to maintaining agent focus and memory[/dim]",
         justify="center"
     )
 
@@ -28,9 +28,9 @@ def code_puppy_brains_slide() -> RenderableType:
     # Add context gathering details
     context_components = [
         ("[green]📁 Context Gathering[/green]", 
-         "File listing + ripgrep searching across entire codebases"),
+         "File listing + searching across entire codebases - uses ripgrep"),
         ("[blue]🤔 Thought Tool[/blue]", 
-         "Short-medium term planning & reasoning (my internal monologue)"),
+         "Short-medium term planning & reasoning for task coordination"),
         ("[purple]💻 Shell Command Tool[/purple]", 
          "Streaming output with time limits & process lifecycle management"),
         ("[orange]🔄 Context Management[/orange]", 
@@ -54,22 +54,22 @@ def code_puppy_brains_slide() -> RenderableType:
         justify="left"
     )
 
-    # Create the "Why This Matters" section
-    why_matters = Text.from_markup(
-        "\n[bold green]💡 Why This Matters 💡[/bold green]\n\n"
-        "[cyan]Traditional AI:[/cyan] Forget what they were doing after compactions (GRRRR Claude Code)\n"
-        "[cyan]Code Puppy:[/cyan] Maintains mission focus for THOUSANDS of steps (if you raise the 300-step limit)\n"
-        "\n[italic]" "The thought tool + protected tokens = Unbreakable concentration" "[/italic]",
+    # Create the "Technical Benefits" section
+    benefits_section = Text.from_markup(
+        "\n[bold green]💡 Technical Benefits 💡[/bold green]\n\n"
+        "[cyan]Standard Approach:[/cyan] Context loss during compaction affects task continuity\n"
+        "[cyan]Protected Token Model:[/cyan] Maintains task focus across thousands of operations\n"
+        "\n[italic]" "Thought tool integration + protected tokens = sustained task awareness" "[/italic]",
         justify="center"
     )
 
-    # Create a technical comparison
+    # Create technical comparison
     tech_comparison = Text.from_markup(
-        "\n[bold yellow]⚙️ Technical Superiority ⚙️[/bold yellow]\n\n"
-        "[red]Context Window Management:[/red] Intelligent compaction vs dumb truncation\n"
-        "[red]Memory Safety:[/red] Protected tokens + step limits\n"
-        "[red]Planning Capability:[/red] Thought tool for strategic reasoning\n"
-        "[red]Operational Safety:[/red] Timeouts + process management",
+        "\n[bold yellow]⚙️ Technical Implementation Comparison ⚙️[/bold yellow]\n\n"
+        "[red]Context Management:[/red] Intelligent compaction vs simple truncation\n"
+        "[red]Memory Protection:[/red] Configurable protected token allocation\n"
+        "[red]Planning Integration:[/red] Thought tool for task coordination\n"
+        "[red]Safety Mechanisms:[/red] Step limits and timeout controls",
         justify="left"
     )
 
@@ -79,14 +79,14 @@ def code_puppy_brains_slide() -> RenderableType:
         Layout(Align.center(main_content), size=7),
         Layout(Align.center(context_table), size=8),
         Layout(Align.left(advanced_features), size=10),
-        Layout(Align.center(why_matters), size=6),
+        Layout(Align.center(benefits_section), size=6),
         Layout(Align.left(tech_comparison), size=6)
     )
 
     # Wrap in a panel for consistency
     final_content = create_slide_panel(
         layout,
-        "🧠 Code Puppy's Advanced Architecture 🧠",
+        "🏗️ Context Engineering Architecture 🏗️",
         "blue"
     )
 

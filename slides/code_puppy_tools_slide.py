@@ -7,16 +7,16 @@ from rich.table import Table
 from utils.common import create_slide_panel
 from slides._deck import deck
 
-@deck.slide(title="Code Puppy's Superpowers")
+@deck.slide(title="Code Puppy: Tool Overview")
 def code_puppy_tools_slide() -> RenderableType:
-    # Create ASCII art for "SUPERPOWERS"
-    powers_art = pyfiglet.figlet_format("Code Puppy", font="pagga").strip()
+    # Create ASCII art for "Toolkit"
+    toolkit_art = pyfiglet.figlet_format("Agent Toolkit", font="pagga").strip()
     
     # Main title
     main_content = Text.from_markup(
-        f"[bold green]{powers_art}[/bold green]\n\n"
-        "[bold yellow]50+ Tools in My Utility Belt! [/bold yellow]\n\n"
-        "[dim]I'm not just a cute puppy - I'm a powerhouse! 🚀[/dim]",
+        f"[bold green]{toolkit_art}[/bold green]\n\n"
+        "[bold yellow]50+ Available Tools for Code Tasks[/bold yellow]\n\n"
+        "[dim]Comprehensive development and automation capabilities[/dim]",
         justify="center"
     )
 
@@ -42,15 +42,15 @@ def code_puppy_tools_slide() -> RenderableType:
             Text.from_markup(abilities)
         )
 
-    # Create the "What This Means" section
-    what_section = Text.from_markup(
-        "\n[bold green]🐕 Cut the VC funded slop middle men out 🐕[/bold green]\n\n"
-        "[yellow]• Full-Stack Development:[/yellow] Write code in any language\n"
-        "[yellow]• Web Automation:[/yellow] Scrape sites, fill forms, test UIs\n"
-        "[yellow]• System Integration:[/yellow] Run commands, manage processes\n"
-        "[yellow]• Team Coordination:[/yellow] Work with specialist agents\n"
-        "[yellow]• Intelligent Reasoning:[/yellow] Explain my thoughts and plans\n"
-        "[yellow]• File Mastery:[/yellow] Organize, search, refactor codebases",
+    # Create the "Development Capabilities" section
+    capabilities_section = Text.from_markup(
+        "\n[bold green]🛠️ Development Capabilities[/bold green]\n\n"
+        "[yellow]• Full-Stack Development:[/yellow] Code generation in multiple languages\n"
+        "[yellow]• Web Automation:[/yellow] Browser control and UI testing\n"
+        "[yellow]• System Integration:[/yellow] Command execution and process management\n"
+        "[yellow]• Multi-Agent Coordination:[/yellow] Collaboration with specialized agents\n"
+        "[yellow]• Reasoning Transparency:[/yellow] Explainable decision-making processes\n"
+        "[yellow]• Codebase Management:[/yellow] File organization, search, and refactoring",
         justify="left"
     )
 
@@ -60,14 +60,14 @@ def code_puppy_tools_slide() -> RenderableType:
     layout.split_column(
         Layout(Align.center(main_content), size=7),
         Layout(Align.center(tools_table), size=12),
-        Layout(Align.left(what_section), size=10),
+        Layout(Align.left(capabilities_section), size=10),
     )
 
     # Wrap in a panel for consistency
     final_content = create_slide_panel(
         layout,
-        "🦴 Code Puppy's Complete Toolkit 🦴",
-        "white"
+        "📋 Comprehensive Agent Toolkit 📋",
+        "blue"
     )
 
     return final_content

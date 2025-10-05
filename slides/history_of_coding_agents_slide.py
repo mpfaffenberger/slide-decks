@@ -33,12 +33,12 @@ def history_of_coding_agents_timeline_slide() -> RenderableType:
 **Mid-Late 2023: Tab Completers / whispers of agents **
 **Tools:** Devin (Smoke in Mirrors), Codeium / Tabnine
 
-**Early 2024: "Agentic CLI" Explosion**
+**Early 2024: Getting more advanced! **
 **Tools:** Claude Code, Cursor 1.0 beta, Aider v0.50+
-**Innovation:** Planning, validation steps, embedded agents (BugBot)
+**Innovation:** Planning, validation steps, embedded mini-agents (BugBot)
 
-**Mid 2024**: The Devin Revolution**
-**Tools:** Devin (still smoke in mirrors, but made software engineers nervous)
+**Mid 2024**: The first agents (Devin making people scared)**
+**Tools:** Devin (still smoke in mirrors)
 **Innovation:** First marketed "fully autonomous software engineer" - multi-agent orchestration
 
 **Late 2024 → 2025: First Real Agentic AI for Software Development**
