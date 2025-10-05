@@ -8,7 +8,7 @@ from rich.panel import Panel
 from utils.common import create_slide_panel
 from slides._deck import deck
 
-@deck.slide(title="Industry Perspective: Andrew Budd")
+@deck.slide(title="Industry Perspective: Priya Venkat")
 def andrew_budd_quote_slide() -> RenderableType:
     # Create ASCII art for "QUOTE"
     quote_art = pyfiglet.figlet_format("QUOTE", font="pagga").strip()
@@ -23,16 +23,16 @@ def andrew_budd_quote_slide() -> RenderableType:
 
     # Create the speaker profile
     profile_section = Text.from_markup(
-        "[cyan]• Name:[/cyan] [bold white]Andrew Budd[/bold white]\n"
-        "[cyan]• Title:[/cyan] [bold white]Technical Fellow & Vice President[/bold white]\n"
-        "[cyan]• Company:[/cyan] [bold white]Walmart Global Tech[/bold white]\n"
-        "[cyan]• Nickname:[/cyan] [bold white]We often refer to Andrew as 'Optimus Prime'[/bold white]\n",
+        "[cyan]• Name:[/cyan] [bold white]Priya Venkat[/bold white]\n"
+        "[cyan]• Title:[/cyan] [bold white]Distinguished Data Scientist[/bold white]\n"
+        "[cyan]• Company:[/cyan] [bold white]Walmart Global Tech, Transaction Systems[/bold white]\n"
+        "[cyan]• Nickname:[/cyan] [bold white]Priya develops and ships high impact DS/ML models to prod.[/bold white]\n",
         justify="center"
     )
 
     # Create the main quote panel
     quote_panel_content = Text.from_markup(
-        "\n[bold yellow]💬 Andrew Budd on Vibe Data Science 💬[/bold yellow]\n\n"
+        "\n[bold yellow]💬Priya Venkat on Vibe Data Science 💬[/bold yellow]\n\n"
         "\n" 
         "[italic][bold white] I come from a background in econometrics, and ... blah blah. [/bold white][/italic]",justify="center"
     )
