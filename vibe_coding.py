@@ -4,6 +4,7 @@ from slides._deck import deck
 from slides import title_slide
 from slides import about_me_slide
 from slides import table_of_contents
+from slides import promise_slide
 from slides import agentic_ai_slide
 from slides import agent_architecture_slide
 from slides import agentic_runtime_slide
@@ -17,6 +18,14 @@ from slides import llxprt_alternative_slide
 from slides import code_puppy_slide
 from slides import code_puppy_tools_slide
 from slides import code_puppy_brains_slide
+from slides import data_science_vibe_coding_slide
+from slides import matthew_hawthon_quote_slide
+from slides import tarek_lahlou_quote_slide
+from slides import laura_barnes_quote_slide
+from slides import priya_venkat_quote_slide
+from slides import ethan_gold_quote_slide
+from slides import andrew_budd_quote_slide
+from slides import deeksha_yennem_quote_slide
 
 
 # Presentation entry point
