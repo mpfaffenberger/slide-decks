@@ -12,6 +12,8 @@ from slides import enshittification_slide
 from slides import vc_leverage_slide
 from slides import code_puppy_intro_slide
 from slides import code_puppy_slide
+from slides import code_puppy_tools_slide
+from slides import code_puppy_brains_slide
 
 
 # Presentation entry point
