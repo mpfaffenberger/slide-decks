@@ -26,7 +26,7 @@ def andrew_budd_quote_slide() -> RenderableType:
         "[cyan]• Name:[/cyan] [bold white]Priya Venkat[/bold white]\n"
         "[cyan]• Title:[/cyan] [bold white]Distinguished Data Scientist[/bold white]\n"
         "[cyan]• Company:[/cyan] [bold white]Walmart Global Tech, Transaction Systems[/bold white]\n"
-        "[cyan]• Nickname:[/cyan] [bold white]Priya develops and ships high impact DS/ML models to prod.[/bold white]\n",
+        "[cyan]• Mike's Commentary:[/cyan] [bold white]Priya develops and ships high impact DS/ML models to prod.[/bold white]\n",
         justify="center"
     )
 
