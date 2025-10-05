@@ -87,7 +87,7 @@ def code_puppy_brains_slide() -> RenderableType:
     final_content = create_slide_panel(
         layout,
         "🏗️ Context Engineering Architecture 🏗️",
-        "blue"
+        "white"
     )
 
     return final_content

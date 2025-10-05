@@ -67,7 +67,7 @@ def code_puppy_tools_slide() -> RenderableType:
     final_content = create_slide_panel(
         layout,
         "📋 Comprehensive Agent Toolkit 📋",
-        "blue"
+        "white"
     )
 
     return final_content

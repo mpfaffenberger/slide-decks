@@ -64,7 +64,7 @@ def privacy_future_slide() -> RenderableType:
     # Create the China/VC disruption section
     disruption_section = Text.from_markup(
         "\n[bold yellow]🌏 Open Source LLM to The Rescue 🌏[/bold yellow]\n\n"
-        "[green]• Distillation Masters:[/green] DeepSeek, Z.AI, Mistral, Qwen etc.\n"
+        "[green]• Distillation Masters + Open Source S-Tier:[/green] DeepSeek, Z.AI, Mistral, Qwen etc.\n"
         "[green]• Price Advantage:[/green] Z.AI - 1/10th the cost of Anthropic models\n",
         justify="left"
     )

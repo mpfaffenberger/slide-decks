@@ -22,31 +22,20 @@ def history_of_coding_agents_timeline_slide() -> RenderableType:
     )
     
     # Create timeline content as markdown
-    timeline_markdown = '''📅 **Late 2022 → Early 2023: The Dawn**
-**Tools:** Aider (pre-1.0), early GPT-3.5 Turbo CLI hacks
-**Innovation:** First accessible CLI agents with persistent context + Git autonomy
+    timeline_markdown = ''' 
+### 2023: Tab Completers / Fill in the middle / Unit test writers!
+ - Codeium /Tabnine / Copilot / Starcoder / VS Code Plugins
 
-**Q2 2023: Mainstream IDE Integration**
-**Tools:** Cursor w/ inline chat (not agentic)
-**Innovation:** Project-wide semantic context + "edit this code with ctrl+k"
+### Mid 2024: The first agents (Devin making people scared)
+ - Devin (smoke in mirrors)
+ - First marketed "fully autonomous software engineer" 
 
-**Mid-Late 2023: Tab Completers / whispers of agents **
-**Tools:** Devin (Smoke in Mirrors), Codeium / Tabnine
+### Early 2025: First Real Agentic AI for Software Development
+ - Cursor, Windsurf with Cascade (was Codeium), Cline, Claude Code
+ - Persistent state, hierarchical planning, mature agentic CLIs / IDEs
 
-**Early 2024: Getting more advanced! **
-**Tools:** Claude Code, Cursor 1.0 beta, Aider v0.50+
-**Innovation:** Planning, validation steps, embedded mini-agents (BugBot)
-
-**Mid 2024**: The first agents (Devin making people scared)**
-**Tools:** Devin (still smoke in mirrors)
-**Innovation:** First marketed "fully autonomous software engineer" - multi-agent orchestration
-
-**Late 2024 → 2025: First Real Agentic AI for Software Development**
-**Tools:** Cursor, Windsurf with Cascade (was Codeium), Cline, Claude Code
-**Innovation:** Persistent state, hierarchical planning, mature agentic CLIs / IDEs
-
-**Present**: Forks of forks, VC funding anything with a pulse, absolute madness
-**Tools:** Roo Code, Kilo, Crush, Opencode, Codex CLI, Claude Code, Cursor, Windsurf, Goose
+### Present: Forks of forks, VC funding anything with a pulse, absolute madness
+ - Roo Code, Kilo, Crush, Opencode, Codex CLI, Claude Code, Cursor, Windsurf, Goose
 '''
 
     # Create timeline panel

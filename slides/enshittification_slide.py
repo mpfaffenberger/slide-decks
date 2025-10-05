@@ -71,7 +71,7 @@ def enshittification_slide() -> RenderableType:
     final_content = create_slide_panel(
         layout,
         "💀 The Tech Death Spiral 💀",
-        "red"
+        "white"
     )
 
     return final_content

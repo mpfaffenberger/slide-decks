@@ -10,8 +10,10 @@ from slides import agentic_runtime_slide
 from slides import history_of_coding_agents_slide
 from slides import enshittification_slide
 from slides import vc_leverage_slide
+from slides import open_source_betrayal_slide
 from slides import privacy_future_slide
 from slides import code_puppy_intro_slide
+from slides import llxprt_alternative_slide
 from slides import code_puppy_slide
 from slides import code_puppy_tools_slide
 from slides import code_puppy_brains_slide
