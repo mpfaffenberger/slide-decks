@@ -28,7 +28,8 @@ from slides import andrew_budd_quote_slide
 from slides import deeksha_yennem_quote_slide
 from slides import weve_seen_this_before_slide
 from slides import data_science_vibe_coding_slide
-
+from slides import ipuppy_notebooks
+from slides import end_slide
 
 
 # Presentation entry point

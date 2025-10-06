@@ -1,14 +1,17 @@
 import pyfiglet
+from pathlib import Path
 from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
 from rich.panel import Panel
-from utils.common import create_slide_panel
+from utils.common import create_slide_panel, resize
 from slides._deck import deck
+from spiel import Triggers
+from spiel.renderables.image import Image
 
 @deck.slide(title="Industry Perspective: Matthew Hawthorn")
-def andrew_budd_quote_slide() -> RenderableType:
+def matthew_hawthon_quote_slide(triggers: Triggers) -> RenderableType:
     # Create ASCII art for "QUOTE"
     quote_art = pyfiglet.figlet_format("QUOTE", font="pagga").strip()
     
@@ -42,7 +45,6 @@ def andrew_budd_quote_slide() -> RenderableType:
         padding=(1, 2)
     )
 
-    # Combine everything in a layout
     layout = Layout()
     layout.split_column(
         Layout(Align.center(main_content), size=6),

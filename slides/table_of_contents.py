@@ -34,7 +34,6 @@ def table_of_contents_slide() -> RenderableType:
         ("4", "[bold yellow]Meet Code Puppy[/bold yellow]", "Vibe Coding in Action"),
         ("5", "[bold yellow]Data Science: Good Fit?[/bold yellow]", "Analysis & Opinions"),
         ("6", "[bold yellow]iPuppy Notebooks[/bold yellow]", "Interactive Data Science"),
-        ("7", "[bold yellow]Our Changing Tech World[/bold yellow]", "This has happened before...")
     ]
 
     for number, title, subtitle in agenda_items:
