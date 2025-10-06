@@ -5,8 +5,10 @@ from rich.layout import Layout
 from rich.align import Align
 from rich.table import Table
 from rich.panel import Panel
-from utils.common import create_slide_panel
+from utils.common import create_slide_panel, resize
 from slides._deck import deck
+from spiel.renderables.image import Image
+from pathlib import Path
 
 @deck.slide(title="Industry Perspective: Andrew Budd")
 def andrew_budd_quote_slide() -> RenderableType:
@@ -33,7 +35,7 @@ def andrew_budd_quote_slide() -> RenderableType:
     quote_panel_content = Text.from_markup(
         "\n[bold yellow]💬 Andrew Budd on Vibe Data Science 💬[/bold yellow]\n\n"
         "\n" 
-        "[italic][bold white] I come from a background in econometrics, and ... blah blah. [/bold white][/italic]",justify="center"
+        "[italic][bold white]I did a BS in Econ and also a BS in CS. Spent a lot of time doing Econometrics an statistics. 90% of what you do is prove your results aren't bullshit. LLMs are too agreeable. You want to be challenged. The last thing you want is a sycophantic assistant. [/bold white][/italic]",justify="center"
     )
 
     quote_panel = Panel(

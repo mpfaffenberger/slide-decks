@@ -5,7 +5,6 @@ from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
 from utils.common import resize
-from spiel import Deck
 from spiel.renderables.image import Image
 from slides._deck import deck
 

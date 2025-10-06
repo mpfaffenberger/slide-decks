@@ -34,7 +34,9 @@ def andrew_budd_quote_slide() -> RenderableType:
     quote_panel_content = Text.from_markup(
         "\n[bold yellow]💬Priya Venkat on Vibe Data Science 💬[/bold yellow]\n\n"
         "\n" 
-        "[italic][bold white] I come from a background in econometrics, and ... blah blah. [/bold white][/italic]",justify="center"
+        "[italic][bold white] Vibe coding enables rapid prototyping without the need to write code line by line. Data scientists and AI/ML practitioners become composers and conductors of a digital ensemble — defining the intent, setting the rhythm and tone, while GenAI tools orchestrate that vision into model pipelines and prototypes. "
+        "Code agents play a pivotal role in exploratory data analysis, translating high-level intent into impactful visualizations and insights. This intuitive, collaborative process sparks creativity, accelerates experimentation, and fosters adaptive problem solving. "
+        "Yet, production-ready solutions still require structure — reviewable, reproducible workflows underpinned by unit tests, version control, and governance. As vibe coding evolves, the discipline of code review, testing, and evaluation remains essential at every level, ensuring harmony between creative flow and technical rigor. [/bold white][/italic]",justify="center"
     )
 
     quote_panel = Panel(

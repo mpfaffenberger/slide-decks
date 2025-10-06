@@ -22,7 +22,7 @@ def data_science_vibe_coding_slide() -> RenderableType:
 
     # Create pros table
     pros_table = Table(title="", show_header=True, box=None, padding=(0, 1))
-    pros_table.add_column("[green]✅ PROS[/green]", style="bold green", width=40)
+    pros_table.add_column("✅ PROS", style="bold green", width=40)
     pros_table.add_column("Impact", style="", width=60)
 
     pros = [
@@ -83,7 +83,7 @@ def data_science_vibe_coding_slide() -> RenderableType:
     final_content = create_slide_panel(
         layout,
         "📊 Data Science: Vibe Coding Analysis 📊",
-        "blue"
+        "white"
     )
 
     return final_content

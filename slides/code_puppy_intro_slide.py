@@ -1,14 +1,14 @@
 import pyfiglet
-from pathlib import Path
+
 from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
-from rich.panel import Panel
 from utils.common import create_slide_panel, resize
 from slides._deck import deck
-from spiel import Triggers
 from spiel.renderables.image import Image
+from pathlib import Path
+
 
 @deck.slide(title="Code Puppy Introduction")
 def code_puppy_intro_slide() -> RenderableType:
@@ -32,9 +32,7 @@ def code_puppy_intro_slide() -> RenderableType:
         "[green]Let me help you write amazing code! 💻✨[/green]",
         justify="center"
     )
-    
 
-    
     # Create main layout with puppy image and introduction
     main_layout = Layout()
     main_layout.split_row(

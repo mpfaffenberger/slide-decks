@@ -5,15 +5,13 @@ from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
-from rich.table import Table
 from rich.panel import Panel
 from rich.markdown import Markdown
 from utils.common import create_slide_panel, resize
 from slides._deck import deck
 from spiel import Triggers
 from spiel.renderables.image import Image
-from textual.scroll_view import ScrollView
-from textual.widgets import Static
+
 @deck.slide(title="Agentic Runtime")
 def agentic_runtime_slide(triggers: Triggers) -> RenderableType:
     # Create ASCII art for "RUNTIME"

@@ -34,7 +34,7 @@ def andrew_budd_quote_slide() -> RenderableType:
     quote_panel_content = Text.from_markup(
         "\n[bold yellow]💬 Laura Barnes on Vibe Data Science 💬[/bold yellow]\n\n"
         "\n" 
-        "[italic][bold white]  [/bold white][/italic]",justify="center"
+        "[italic][bold white]I mostly use it in my teaching but from what I've observed with my students, here is my two cents: it's a new way of thinking about building a program but requires you to know your data and how to describe what you want to do. If you don't have computational thinking, it doesn't work. [/bold white][/italic]",justify="center"
     )
 
     quote_panel = Panel(

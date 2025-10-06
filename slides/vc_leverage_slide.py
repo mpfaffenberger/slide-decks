@@ -15,7 +15,7 @@ from spiel.renderables.image import Image
 @deck.slide(title="VC Leverage Cascade")
 def vc_leverage_slide() -> RenderableType:
     # Create ASCII art for "VC LEVERAGE"
-    vc_art = pyfiglet.figlet_format("VC LEVERAGE", font="pagga").strip()
+    vc_art = pyfiglet.figlet_format("LAYERED INVESTMENTS", font="pagga").strip()
 
     # Create the main VC leverage content
     main_content = Text.from_markup(

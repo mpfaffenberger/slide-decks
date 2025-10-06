@@ -1,10 +1,9 @@
 import pyfiglet
-from pathlib import Path
 from rich.console import RenderableType
 from rich.text import Text
 from rich.layout import Layout
 from rich.align import Align
-from utils.common import resize, create_slide_panel
+from utils.common import create_slide_panel
 from slides._deck import deck
 # This will be imported by the main deck file
 

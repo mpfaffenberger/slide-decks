@@ -25,7 +25,7 @@ def andrew_budd_quote_slide() -> RenderableType:
         "[cyan]• Individual:[/cyan] [bold white]Dr. Tarek Lahlou, PhD - Electrical Engineering, MIT[/bold white]\n"
         "[cyan]• Title:[/cyan] [bold white]Senior Distinguished Data Scientist[/bold white]\n"
         "[cyan]• Company:[/cyan][bold white]Walmart Global Tech[/bold white]\n"
-        "[cyan]• Mike's Commentary:[/cyan][bold white]I ask Tarek to advise on every project for over 4 years (2 companies)[/bold white]\n",
+        "[cyan]• Mike's Commentary:[/cyan][bold white]I've routinely asked Tarek to advise every project for over 5 years (2 companies)[/bold white]\n",
         justify="center"
     )
 
@@ -33,7 +33,7 @@ def andrew_budd_quote_slide() -> RenderableType:
     quote_panel_content = Text.from_markup(
         "\n[bold yellow]💬 Tarek Lahlou on Vibe Data Science 💬[/bold yellow]\n\n"
         "\n" 
-        "[italic][bold white] The future of vibe science isn’t faster code or static experiments. It’s quasi-conscious code where systems understand why they exist and how to serve the evolving logic of their creators. [/bold white][/italic]",justify="center"
+        "[italic][bold white] Vibe Coding’s grasp of science and math is shallower than the experts I know, but still far deeper than any company will ever need it to be. [/bold white][/italic]",justify="center"
     )
 
     quote_panel = Panel(

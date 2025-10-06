@@ -18,7 +18,7 @@ from slides import llxprt_alternative_slide
 from slides import code_puppy_slide
 from slides import code_puppy_tools_slide
 from slides import code_puppy_brains_slide
-from slides import data_science_vibe_coding_slide
+from slides import data_science_vibe_coding_good_fit
 from slides import matthew_hawthon_quote_slide
 from slides import tarek_lahlou_quote_slide
 from slides import laura_barnes_quote_slide
@@ -26,6 +26,9 @@ from slides import priya_venkat_quote_slide
 from slides import ethan_gold_quote_slide
 from slides import andrew_budd_quote_slide
 from slides import deeksha_yennem_quote_slide
+from slides import weve_seen_this_before_slide
+from slides import data_science_vibe_coding_slide
+
 
 
 # Presentation entry point
