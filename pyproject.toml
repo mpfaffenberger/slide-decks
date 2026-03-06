@@ -1,11 +1,28 @@
 [project]
 name = "slide-decks"
 version = "0.1.0"
-description = "Add your description here"
+description = "Vibe Coding: Is It Right For Data Science? - A spiel presentation"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "pyfiglet>=1.0.4",
+    "python-pptx>=1.0.2",
     "spiel>=0.5.1",
     "textual>=0.11",
 ]
+
+[project.scripts]
+slide-decks = "vibe_coding:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["vibe_coding"]
+
+[tool.setuptools.packages.find]
+include = ["slides*", "utils*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.png", "*.jpg", "*.jpeg", "*.gif"]
